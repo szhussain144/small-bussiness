@@ -1,0 +1,20 @@
+<h2>Purchase Order</h2>
+
+<form [formGroup]="purchaseOrderForm" (ngSubmit)="submitPurchaseOrder()">
+  <div>
+    <label for="supplier">Suppliers:</label>
+    <kendo-dropdownlist id="supplier" [data]="suppliersList" formControlName="selectedsupplier" (valueChange)="getProducts($event)"></kendo-dropdownlist>
+  </div>
+  <div>
+    <label for="product">Product:</label>
+    <kendo-dropdownlist id="product" [data]="productsList" formControlName="selectedProduct"></kendo-dropdownlist>
+  </div>
+
+  <div class="mb-4">
+    <label for="quantity">Quantity:</label>
+    <input kendoTextBox type="text" id="quantity" formControlName="quantity">
+</div>
+<div>
+    <button kendoButton type="submit" [disabled]="purchaseOrderForm.invalid">Submit</button>
+  </div>
+</form>

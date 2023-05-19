@@ -1,0 +1,111 @@
+ /* Import Bootstrap CSS */
+ @import '~bootstrap/dist/css/bootstrap.min.css';
+
+ /* Import Kendo UI Bootstrap theme CSS */
+ @import '~@progress/kendo-theme-bootstrap/dist/all.css';
+
+ /* You can add global styles to this file, and also import other style files */
+
+ body {
+     font-family: 'Rubik', sans-serif;
+     font-size: 14px;
+     margin: 0px;
+     padding: 0px;
+     scrollbar-width: thin;
+ }
+
+ kendo-popup .k-menu-group .k-item.k-focus>.k-link {
+     box-shadow: none;
+ }
+
+ kendo-popup .k-menu-group .k-item.k-focus>.k-link:hover {
+     color: #e35869;
+     border: 1px solid #fff;
+     background-color: transparent;
+ }
+
+ kendo-popup .k-menu-group .k-item.k-focus>.k-link:active {
+     background-color: transparent;
+ }
+
+ /* Menu Button  */
+
+ kendo-dropdownbutton .k-button-solid {
+     background-color: #fff;
+     padding: 2px 5px;
+ }
+
+ /* Product Card  */
+
+ app-product-card .k-card {
+     margin: 0 auto;
+ }
+
+ /* Table  */
+
+ .my-kendo-table {
+     border-collapse: collapse;
+     width: 100%;
+     border-color: #aaa;
+ }
+
+ .my-kendo-table th,
+ .my-kendo-table td {
+     border: 1px solid #ccc;
+     padding: 8px;
+ }
+
+ .my-kendo-table .k-table-th {
+     background-color: #e35869;
+     font-weight: bold;
+ }
+
+ .my-kendo-table tr:nth-child(even) {
+     background-color: #e358692e;
+ }
+
+ .my-kendo-table tr:hover {
+     background-color: #e35869 !important;
+ }
+
+ /* Sidebar  */
+
+ .sidebar kendo-menu {
+     height: 100%;
+     display: block;
+ }
+
+ .sidebar kendo-menu ul.k-menu {
+     flex-direction: column;
+     height: 100%;
+     padding-block: 0px !important;
+     background-color: #fff;
+     border: 1px solid #aaa;
+ }
+
+ .sidebar kendo-menu ul.k-menu li {
+    color: #000000 !important;
+    border-bottom: 1px dotted #aaa !important;
+ }
+
+ .sidebar kendo-menu ul.k-menu li:hover {
+     background: #e358692e !important;
+     border-bottom: 2px solid #e358692e !important;
+ }
+
+ .sidebar kendo-menu ul.k-menu li:active {
+     color: #e35869 !important;
+ }
+
+ .sidebar-content {
+    padding: 0px 15px;
+ }
+
+ app-invoices .container {
+    margin-top: 0px !important;
+}
+
+.active {
+    color: #e35869 !important;
+    background-color: #fae1e4 !important;
+}

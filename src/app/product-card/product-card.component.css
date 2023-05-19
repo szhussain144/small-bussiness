@@ -1,0 +1,33 @@
+kendo-card-actions {
+    justify-content: center;
+}
+
+kendo-card-actions button {
+    color: #000000;
+}
+
+kendo-card-actions button:hover {
+    background-color: #e35869 !important;
+    color: #fff;
+}
+
+kendo-card-actions button .k-icon {
+    font-size: 22px;
+}
+
+.k-card-image, .k-card-media{
+    min-height: 225px;
+    max-height: 225px;
+}
+
+.k-card{
+    margin-bottom: 10%;
+}
+
+.available-product{
+    color: green;
+}
+
+.out-of-stock{
+    color: red;
+}

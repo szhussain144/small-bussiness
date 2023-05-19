@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="row">
+      <!-- <div class="col-12"> -->
+        <h1 class="title" class="col-6">Products</h1>
+        <button kendoButton themeColor="error" class="col-3 mb-4" style="margin-left: 20%;" routerLink="/add-product">Add Product</button>
+    <!-- </div> -->
+    <div class="col-12">
+        <kendo-grid
+          class="my-kendo-table"
+          [data]="products"
+          [pageSize]="pageSize"
+          [skip]="skip"
+          (pageChange)="pageChange($event)"
+        >
+          <kendo-grid-column field="id" title="ID"></kendo-grid-column>
+          <kendo-grid-column field="name" title="Name"></kendo-grid-column>
+          <kendo-grid-column
+            field="description"
+            title="Description"
+          ></kendo-grid-column>
+          <kendo-grid-column
+            field="quantity"
+            title="Quantity"
+          ></kendo-grid-column>
+          <kendo-grid-column field="price" title="Price"></kendo-grid-column>
+          <kendo-grid-column field="image" title="Image">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <img class="flag" [src]="dataItem.image" [width]="30" />
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="action" title="Action" [class]="{ 'text-center': true }">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                  <button kendoButton class="badge" [routerLink]="['/edit-product',dataItem.id]" themeColor="base">
+                      Edit
+                    </button>
+                    <button kendoButton class="badge" (click)="deleteProduct(dataItem.id)" themeColor="error">
+                      Delete
+                    </button>
+                </ng-template>
+          </kendo-grid-column>
+        </kendo-grid>
+      </div>
+    </div>
+  </div>  

@@ -1,0 +1,54 @@
+.invoice-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .invoice-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .company-info {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  .invoice-info {
+    text-align: right;
+  }
+  
+  .customer-info {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-grid {
+    margin-bottom: 20px;
+  }
+  
+  .invoice-total {
+    text-align: right;
+  }
+  
+  .total-amount {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

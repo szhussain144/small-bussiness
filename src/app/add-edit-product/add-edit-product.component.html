@@ -1,0 +1,26 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <label for="name">Name:</label>
+        <input kendoTextBox type="text" id="name" formControlName="name">
+    </div>
+    <div class="mb-4">
+        <label for="description">Description:</label>
+        <input kendoTextBox type="text" id="description" formControlName="description">
+    </div>
+    <div class="mb-4">
+        <label for="price">Price:</label>
+        <input kendoTextBox type="number" id="price" formControlName="price">
+    </div>
+    <div class="mb-4">
+        <label for="quantity">Quantity:</label>
+        <input kendoTextBox type="number" id="quantity" formControlName="quantity">
+    </div>
+    <div class="mb-4">
+        <label for="image">Image:</label>
+        <input kendoTextBox type="file" id="image" (change)="onFileSelected($event)">
+    </div>
+    <div>
+      <button kendoButton type="submit" [disabled]="productForm.invalid">Submit</button>
+    </div>
+  </form>
+  

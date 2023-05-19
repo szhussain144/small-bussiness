@@ -1,0 +1,36 @@
+<h2>Invoice Details</h2>
+
+<div class="invoice-details">
+  <div class="invoice-header">
+    <div class="logo">
+      <img src="assets/logo.webp" alt="Company Logo">
+    </div>
+    <div class="company-info">
+      <h3>{{invoiceItems[0].supplier.name}}</h3>
+      <p>{{invoiceItems[0].supplier.address}}</p>
+      <p>Phone: {{invoiceItems[0].supplier.phoneNumber}}</p>
+    </div>
+    <div class="invoice-info">
+      <p>Invoice #: {{invoiceItems[0].id}}</p>
+      <p>Date: {{ invoiceItems[0].invoiceDate | date }}</p>
+    </div>
+  </div>
+
+  <div class="customer-info">
+    <h4>Customer Information</h4>
+    <p>Customer Name: {{invoiceItems[0].customer.name}}</p>
+    <p>Address: {{invoiceItems[0].customer.address}}</p>
+    <p>Email: {{invoiceItems[0].customer.email}}</p>
+  </div>
+
+  <kendo-grid [data]="invoiceItems" >
+    <kendo-grid-column field="product.name" title="Item" [width]="200"></kendo-grid-column>
+    <kendo-grid-column field="amount" title="Price" [width]="120" format="{0:c}"></kendo-grid-column>
+    <kendo-grid-column field="amount" title="Total" [width]="120" format="{0:c}"></kendo-grid-column>
+  </kendo-grid>
+
+  <div class="invoice-total">
+    <p>Subtotal: {{ invoiceItems[0].amount | currency }}</p>
+    <p class="total-amount">Total Amount: {{ invoiceItems[0].amount | currency }}</p>
+  </div>
+</div>

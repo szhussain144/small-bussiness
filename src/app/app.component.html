@@ -1,0 +1,13 @@
+<app-header [isLoggedIn]="isLoggedIn" [userType]="userType"></app-header>
+<div class="appContent pb-4">
+  <div class="container">
+    <div class="row mx-3">
+      <app-sidebar *ngIf="sideBar" class="col-2 p-0"></app-sidebar>
+      <div class="col-10 p-0">
+        <div class="sidebar-content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

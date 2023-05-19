@@ -1,0 +1,35 @@
+<kendo-appbar position="top">
+    <kendo-appbar-section routerLink="/" style="cursor: pointer;">
+      <h1 class="title">Small Business</h1>
+    </kendo-appbar-section>
+
+    <kendo-appbar-section class="nav-menu">
+    </kendo-appbar-section>
+
+    <kendo-appbar-section class="actions">
+      <kendo-badge-container>
+        <button kendoButton fillMode="flat" *ngIf="(isLoggedIn && userType === 'BUYER') || !isLoggedIn" routerLink="/cart">
+            <span class="k-icon k-i-cart"></span>
+        </button>
+      </kendo-badge-container>
+      <span class="k-appbar-separator"></span>
+    </kendo-appbar-section>
+
+    <kendo-appbar-section class="k-block">
+      <div class="dropdown">
+        <button class="dropdown-toggle" (click)="toggleDropdown()" type="button" id="dropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <kendo-avatar
+        [imageSrc]="kendokaAvatar"
+        shape="circle"
+        width="26px"
+        height="26px"
+      ></kendo-avatar>
+        </button>
+        <div class="dropdown-menu" [ngClass]="{ 'show': isDropdownOpen }" aria-labelledby="dropdownButton">
+          <a class="dropdown-item" *ngIf="!isLoggedIn" (click)="onSelectionChange('sign in')">Sign In</a>
+          <a class="dropdown-item" *ngIf="userType === 'BUYER'" (click)="onSelectionChange('invoice')">Invoice</a>
+          <a class="dropdown-item" *ngIf="isLoggedIn" (click)="onSelectionChange('logout')">Logout</a>
+        </div>
+      </div>
+    </kendo-appbar-section>
+  </kendo-appbar>

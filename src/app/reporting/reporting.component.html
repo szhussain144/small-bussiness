@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-6">
+    <label for="fromDate">From Date:</label>
+    <input
+      kendoTextBox
+      type="date"
+      id="fromDate"
+      [(ngModel)]="fromDate"
+      (change)="filterDataByDate()"
+    />
+  </div>
+  <div class="col-6">
+    <label for="toDate">To Date:</label>
+    <input
+      kendoTextBox
+      type="date"
+      id="toDate"
+      [(ngModel)]="toDate"
+      (change)="filterDataByDate()"
+    />
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 p-5 mb-2">
+    <h3>Bar Chart</h3>
+    <kendo-chart>
+      <kendo-chart-series>
+        <kendo-chart-series-item
+          type="bar"
+          [data]="filteredData"
+          field="value"
+          categoryField="name"
+        ></kendo-chart-series-item>
+      </kendo-chart-series>
+    </kendo-chart>
+  </div>
+
+  <div class="col-6 p-5 mb-2">
+    <h3>Line Chart</h3>
+    <kendo-chart>
+      <kendo-chart-series>
+        <kendo-chart-series-item
+          type="line"
+          [data]="filteredData"
+          field="value"
+          categoryField="date"
+        ></kendo-chart-series-item>
+      </kendo-chart-series>
+      <kendo-chart-category-axis>
+        <kendo-chart-category-axis-item
+          [labels]="{ step: 1 }"
+        ></kendo-chart-category-axis-item>
+      </kendo-chart-category-axis>
+    </kendo-chart>
+  </div>
+
+  <div class="col-6 p-5 mb-2">
+    <h3>Pie Chart</h3>
+    <kendo-chart>
+      <kendo-chart-series>
+        <kendo-chart-series-item
+          type="pie"
+          [data]="filteredData"
+          field="value"
+          categoryField="name"
+        ></kendo-chart-series-item>
+      </kendo-chart-series>
+    </kendo-chart>
+  </div>
+</div>

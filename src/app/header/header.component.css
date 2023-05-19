@@ -1,0 +1,80 @@
+kendo-appbar-section.nav-menu {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.k-appbar-light {
+    background-color: #e35869;
+    color: white;
+}
+
+.title {
+    font-size: 18px;
+    margin: 0;
+}
+
+kendo-badge-container {
+    margin-right: 8px;
+}
+
+ul {
+    font-size: 16px;
+    font-weight: 600;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+li {
+    margin: 0 9px;
+}
+
+li:hover {
+    cursor: pointer;
+    color: #212529;
+}
+
+.k-icon {
+    font-size: 22px;
+}
+
+.actions .k-button {
+    padding: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-toggle {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #212529;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 0;
+    margin-top: 2px;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 8px 12px;
+    color: #212529;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }

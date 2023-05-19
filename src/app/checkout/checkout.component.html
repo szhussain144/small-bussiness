@@ -1,0 +1,47 @@
+<!-- checkout.component.html -->
+<div class="row">
+    <h2>Checkout</h2>
+    <div class="col-4">
+    <form [formGroup]="checkoutForm" (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" type="text" kendoTextBox class="k-textbox" formControlName="name" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" kendoTextBox class="k-textbox" formControlName="email" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input id="phoneNumber" type="text" kendoTextBox class="k-textbox" formControlName="phoneNumber" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" class="k-textarea" kendoTextArea formControlName="address" required></textarea>
+      </div>
+  
+      <p>Do you want to create your account also? <strong (click)="craeteAccount = true">Yes <kendo-icon name="tick"></kendo-icon></strong></p>
+  
+      <div class="form-group" *ngIf="craeteAccount">
+        <label for="password">Password:</label>
+        <input id="password" type="password" kendoTextBox class="k-textbox" formControlName="password" required />
+      </div>
+  
+      <button type="submit" class="k-button">Submit</button>
+    </form>
+</div>
+    <div class="checkout-summary col-8">
+      <h3>Order Summary</h3>
+  
+      <kendo-grid [data]="summaryData">
+        <kendo-grid-column field="name" title="Item"></kendo-grid-column>
+        <kendo-grid-column field="price" title="Price"></kendo-grid-column>
+      </kendo-grid>
+      
+      <div class="total">Total: {{ calculateTotal() }}</div>
+    </div>
+  </div>
+  

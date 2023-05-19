@@ -1,0 +1,18 @@
+<div class="login-form">
+    <form class="k-form" [formGroup]="registerForm" (ngSubmit)="submitForm()">
+        <h1>Login</h1>
+        <div class="k-form-fieldset content">
+            <div class="mb-4">
+                <label for="email">Email:</label>
+                <input kendoTextBox type="email" id="email" formControlName="email">
+            </div>
+            <div class="mb-4">
+                <label for="password">Password:</label>
+                <input kendoTextBox type="password" id="password" formControlName="password">
+            </div>
+        </div>
+        <div class="k-form-buttons action">
+            <button kendoButton>Sign in</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div *ngIf="!session">
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="filter-bar">
+        <div class="wrapper">
+          <kendo-autocomplete [data]="productList" [filterable]="true" (filterChange)="handleFilter($event)" placeholder="Search Product">
+          </kendo-autocomplete>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="title">Product Listing</h1>
+    </div>
+    <div class="col-sm-4 col-12" *ngFor="let product of filteredProducts">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+  </div>
+</div>

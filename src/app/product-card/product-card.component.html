@@ -1,0 +1,35 @@
+<kendo-card>
+  <img kendoCardMedia src="{{ product.image }}" />
+  <kendo-card-body>
+    <h4>{{ product.name }}</h4>
+    <div class="row col-12">
+      <p class="col-6"><strong>{{ product.price }} USD</strong></p>
+      <p class="col-6" [ngClass]="[product.quantity > 0 ? 'available-product' : 'out-of-stock']">{{ product.quantity > 0 ? product.quantity+' pieces left' : "Out of Stock" }}</p>
+    </div>
+    <div *ngIf="expanded">
+      <hr kendoCardSeparator />
+      <div class="recipe-wrap">
+        {{ product.description }}
+      </div>
+    </div>
+  </kendo-card-body>
+  <hr kendoCardSeparator *ngIf="horizontalStretched" />
+  <kendo-card-actions
+    [orientation]="actionsOrientation"
+    [layout]="actionsLayout"
+  >
+    <button kendoButton fillMode="flat" (click)="addProducts(product)">
+      <span class="k-icon k-i-cart"></span>
+    </button>
+    <hr kendoCardSeparator orientation="vertical" *ngIf="horizontalStretched" />
+    <button
+      kendoButton
+      fillMode="flat"
+      themeColor="primary"
+      (click)="toggleRecipe()"
+    >
+      <span class="k-icon k-i-more-vertical"></span>
+      Product Description
+    </button>
+  </kendo-card-actions>
+</kendo-card>
